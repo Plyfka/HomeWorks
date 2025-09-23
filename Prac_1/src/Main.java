@@ -4,12 +4,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Створення категорій
         Category electronics = new Category(1, "Електроніка");
         Category smartphones = new Category(2, "Смартфони");
         Category accessories = new Category(3, "Аксесуари");
 
-        // Список усіх товарів
         List<Product> allProducts = Arrays.asList(
                 new Product(1, "Ноутбук", 19999.99, "Високопродуктивний ноутбук для роботи та ігор", electronics),
                 new Product(2, "Смартфон", 12999.50, "Смартфон з великим екраном та високою автономністю", smartphones),
@@ -17,7 +15,7 @@ public class Main {
         );
 
         Cart cart = new Cart();
-        List<Order> orderHistory = new ArrayList<>(); // Історія замовлень
+        List<Order> orderHistory = new ArrayList<>(); 
 
         while (true) {
             System.out.println("\nВиберіть опцію:");
@@ -31,7 +29,7 @@ public class Main {
             System.out.println("0 - Вийти");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // очистка буфера
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -115,7 +113,6 @@ public class Main {
         }
     }
 
-    // Допоміжний метод пошуку товару за ID
     private static Product findProductById(List<Product> products, int id) {
         for (Product p : products) {
             if (p.getId() == id) return p;
